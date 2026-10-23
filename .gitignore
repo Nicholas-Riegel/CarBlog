@@ -1,0 +1,33 @@
+COMMANDS.md
+NOTES.md
+
+*.log
+
+# H2 local database files
+*.mv.db
+*.trace.db
+
+# Node / React (frontend, when you create it)
+node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+backend/src/main/resources/application-local.properties
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+!.vscode/settings.json
+.project
+.classpath
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
