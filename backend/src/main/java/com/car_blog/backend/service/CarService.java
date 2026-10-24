@@ -42,17 +42,12 @@ public class CarService {
     }
 
     public void deleteCar(Long id){
-        if (!carRepo.existsById(id)){
-            throw carNotFound();
-        }
+        findCarOrThrow(id);
         carRepo.deleteById(id);
     }
 
+    // Helper method
     private Car findCarOrThrow(Long id){
-        return carRepo.findById(id).orElseThrow(this::carNotFound); // = () -> carNotFound()
-    }
-
-    private ResponseStatusException carNotFound(){
-        return new ResponseStatusException(HttpStatus.NOT_FOUND, "Car not found.");
+        return carRepo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Car not found."));
     }
 }

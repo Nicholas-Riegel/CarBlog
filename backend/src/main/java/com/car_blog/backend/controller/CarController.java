@@ -13,11 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PutMapping;
-
-
-
 
 @RestController 
 @RequestMapping("/api/cars")
@@ -30,7 +26,7 @@ public class CarController {
     }
 
     @GetMapping
-    public List<Car> getCars() {
+    public List<Car> getAllCars() {
         return carService.getAllCars();
     }
 
@@ -40,7 +36,7 @@ public class CarController {
     }
 
     @GetMapping("/{id}")
-    public Car getCarById(@PathVariable Long id) {
+    public Car getCar(@PathVariable Long id) {
         return carService.getCarById(id);
     }
     

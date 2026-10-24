@@ -52,7 +52,7 @@ public class Car {
         this.imageUrl = imageUrl;
     }
     
-    // CreatedAt and UpdatedAt
+    // CreatedAt
     @PrePersist
     public void prePersist(){
         Instant now = Instant.now();
@@ -60,6 +60,7 @@ public class Car {
         updatedAt = now;
     }
 
+    // UpdatedAt
     @PreUpdate
     public void preUpdate(){
         updatedAt = Instant.now();
