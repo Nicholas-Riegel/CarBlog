@@ -8,90 +8,47 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter 
+@NoArgsConstructor 
+@Table(name = "cars")
 public class Car {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Setter 
     private String make;
 
+    @Setter 
     private String model;
 
+    @Setter 
     private Integer year;
 
+    @Setter 
     private String description;
 
+    @Setter 
     private Double price; 
 
+    @Setter 
     private String imageUrl;
 
     private Instant createdAt;
     
     private Instant updatedAt;
 
-    public Car(){}
-
     public Car(String make, String model, Integer year, String imageUrl){
         this.make = make;
         this.model = model;
         this.year = year;
-        this.imageUrl = imageUrl;
-    }
-
-    // Field getters
-    public Long getId(){
-        return id;
-    }
-
-    public String getMake(){
-        return make;
-    }
-
-    public String getModel(){
-        return model;
-    }
-
-    public Integer getYear(){
-        return year;
-    }
-
-    public String getDescription(){
-        return description;
-    }
-
-    public Double getPrice(){
-        return price;
-    }
-
-    public String getImageUrl(){
-        return imageUrl;
-    }
-    
-    // Field setters
-    public void setMake(String make){
-        this.make = make;
-    }
-
-    public void setModel(String model){
-        this.model = model;
-    }
-
-    public void setYear(Integer year){
-        this.year = year;
-    }
-
-    public void setDescription(String description){
-        this.description = description;
-    }
-
-    public void setPrice(Double price){
-        this.price = price;
-    }
-
-    public void setImageUrl(String imageUrl){
         this.imageUrl = imageUrl;
     }
     
@@ -106,13 +63,5 @@ public class Car {
     @PreUpdate
     public void preUpdate(){
         updatedAt = Instant.now();
-    }
-
-    public Instant getCreatedAt(){
-        return createdAt;
-    }
-
-    public Instant getUpdatedAt(){
-        return updatedAt;
     }
 }
