@@ -17,16 +17,17 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/api/images")
 public class ImageController {
 
-    private final Path uploadDir = Path.of("uploads");
+    private final Path uploads = Path.of("uploads");
 
     @PostMapping
-    public ResponseEntity<Map<String, String>> upload(@RequestParam("file") MultipartFile file) throws IOException {
+    public ResponseEntity<Map<String, String>> upload(@RequestParam("imageFile") MultipartFile file) throws IOException {
         
+        // The browser sets the file type automatically when the user picks a file. When the user chooses a file in <input type="file">, the browser creates a File object. It fills in a type property (the MIME type) by looking at the file's extension (for example .jpg becomes image/jpeg, .png becomes image/png) using the operating system's or browser's built-in mapping.
         if (file.isEmpty() || file.getContentType() == null || !file.getContentType().startsWith("image/")) {
             return ResponseEntity.badRequest().build();
         }
 
-        Files.createDirectories(uploadDir);
+        Files.createDirectories(uploads);
 
         String originalName = file.getOriginalFilename();
         String extension = (originalName != null && originalName.contains("."))
@@ -34,7 +35,7 @@ public class ImageController {
                 : "";
         String filename = UUID.randomUUID() + extension;
 
-        file.transferTo(uploadDir.resolve(filename));
+        file.transferTo(uploads.resolve(filename));
 
         return ResponseEntity.ok(Map.of("imageUrl", "/uploads/" + filename));
     }

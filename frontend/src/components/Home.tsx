@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <ul>
       {cars.map(car => (
-        <li key={car.id}>{car.year} {car.make} {car.model}</li>
+        <li key={car.id}>{car.year} {car.make} {car.model} <img src={car.imageUrl} alt="car-picture" /></li>
       ))}
     </ul>
   )
