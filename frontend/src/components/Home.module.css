@@ -1,0 +1,12 @@
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.main-column{
+    width: 80%;
+}
+
+.main-column img {
+    width: 100%;
+}

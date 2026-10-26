@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    padding: 1rem 3rem;
+    background-color: rgb(67, 85, 242);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}

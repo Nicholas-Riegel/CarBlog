@@ -1,0 +1,39 @@
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.main-column{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.add-car-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 1rem 0 0 0;
+}
+
+.add-car-form label {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1rem 0;
+}
+
+.add-car-form input {
+    height: 2rem;
+    padding: .3rem;
+}
+
+.add-car-form textarea {
+    height: 5rem;
+    padding: .4rem;
+}
+
+.add-car-form button {
+    height: 3rem;
+}

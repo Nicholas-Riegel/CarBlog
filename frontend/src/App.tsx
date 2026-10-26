@@ -2,8 +2,7 @@ import { Route, Routes } from 'react-router'
 import Nav from './components/Nav'
 import Home from './components/Home'
 import AddCar from './components/AddCar'
-
-import './App.css'
+import EditCar from './components/EditCar'
 
 function App() {
 
@@ -13,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/add-car" element={<AddCar />} />
+        <Route path="/edit-car/:id" element={<EditCar />} />
       </Routes>
     </>
   )
