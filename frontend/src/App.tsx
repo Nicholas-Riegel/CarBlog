@@ -3,6 +3,7 @@ import Nav from './components/Nav'
 import Home from './components/Home'
 import AddCar from './components/AddCar'
 import EditCar from './components/EditCar'
+import Car from './components/Car'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/add-car" element={<AddCar />} />
         <Route path="/edit-car/:id" element={<EditCar />} />
+        <Route path="/car/:id" element={<Car />} />
       </Routes>
     </>
   )

@@ -1,4 +1,4 @@
-export type Car = {
+export type CarType = {
   id: number
   make: string
   model: string

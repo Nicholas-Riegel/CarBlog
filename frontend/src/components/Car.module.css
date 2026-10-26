@@ -1,0 +1,16 @@
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.main-column {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.main-column img {
+    width: 100%;
+}
